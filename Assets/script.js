@@ -5,6 +5,8 @@ $("#currentDay").text(today.format("dddd, MMMM Do"));
 
 function colorcoder() {
     var currenthour = Number(parseInt(moment().startOf('day').fromNow()));
+    console.log(currenthour);
+    console.log(moment().startOf('day').fromNow());
     var timeEL = document.getElementsByClassName("timeCL");
    
     for (var i=0; i<timeEL.length; i++){
@@ -40,3 +42,14 @@ function saving(event) {
         }    
 }};
 
+function pullsaved() {
+    var textEL = document.getElementsByClassName("textarea");
+
+    for (var i=0; i<textEL.length; i++){
+        var saved = JSON.parse(localStorage.getItem("todo " +[i]));
+
+        textEL[i].value=saved
+    }
+}
+
+pullsaved();
