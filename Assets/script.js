@@ -27,13 +27,32 @@ function colorcoder() {
   
 colorcoder();
 
-var save = document.getElementsByClassName('saveBtn')
+// var todos = {}
 
-function toLS(){
-  var input = document.getElementsByClassName("description");
-  localStorage.setItem("description", input.value); 
-}
 
-save.onclick = toLS();
+// function toLS(){
+//   var input = document.getElementById("textarea");
+//   localStorage.setItem("description", (input.value)); 
+  
+// }
 
-// var storedValue = localStorage.getItem("description");
+
+
+
+function saving(event) {
+    console.log(event);
+    var buttonEL = document.getElementsByTagName("button");
+    let current = event.target.parentNode.parentNode;
+    let prevSiblings = current.previousElementSibling;
+    var thetarget = prevSiblings.children[0];
+    console.log(thetarget);
+    console.log(thetarget.value);
+    var data =thetarget.value;
+    console.log(data);
+    console.log(buttonEL);
+    console.log(event.target.parentNode);
+    for (var i=0; i<buttonEL.length; i++){
+        if (buttonEL[i] === event.target.parentNode) {
+    localStorage.setItem("todo " +[i], JSON.stringify(data));
+        } else return;
+}}
