@@ -4,12 +4,17 @@ var today = moment();
 $("#currentDay").text(today.format("dddd, MMMM Do"));
 
 function colorcoder() {
-    var currenthour = Number(parseInt(moment().startOf('day').fromNow()));
+    var currenthour4 = Number(parseInt(moment().startOf('day').fromNow()));
     console.log(currenthour);
     console.log(moment().startOf('day').fromNow());
     var timeEL = document.getElementsByClassName("timeCL");
+   var currenthouruntil = Number(parseInt(moment().endOf('day').fromNow()));
+   console.log(currenthouruntil);
+   console.log(moment().format('HH'));
+   console.log(Number(moment().format('HH')));
+   var currenthour = Number(moment().format('HH'));
    
-    for (var i=0; i<timeEL.length; i++){
+   for (var i=0; i<timeEL.length; i++){
         if (currenthour === Number([i])) {
          timeEL[i].classList.add("present");
         } else if (currenthour <Number([i])) {
