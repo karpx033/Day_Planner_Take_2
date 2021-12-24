@@ -27,3 +27,13 @@ function colorcoder() {
   
 colorcoder();
 
+var save = document.getElementsByClassName('saveBtn')
+
+function toLS(){
+  var input = document.getElementsByClassName("description");
+  localStorage.setItem("description", input.value); 
+}
+
+save.onclick = toLS();
+
+// var storedValue = localStorage.getItem("description");

@@ -4,7 +4,19 @@ body {
   line-height: 1;
 }
 
-textarea {
+img {
+  width: 30px;
+  padding: 0px;
+  margin: 0px;
+ 
+}
+button {
+  padding: 0px;
+  margin: 0px;
+  
+}
+
+.textarea {
   background: transparent;
   border: none;
   resize: none;
@@ -63,9 +75,13 @@ textarea {
   border-bottom-right-radius: 15px;
   background-color: #06aed5;
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.saveBtn i:hover {
-  font-size: 20px;
+img:hover {
+  width: 40px;
   transition: all 0.3s ease-in-out;
+  
 }
